@@ -1,11 +1,26 @@
-import "./App.css";
+import React, { useState } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import HomePage from "./pages/Home/HomePage";
+import StarredImagesPage from "./pages/StarredImagesPage/StarredImagesPage";
 
-function App() {
+const App = () => {
+  const [isHomePageVisible, setIsHomePageVisible] = useState(true);
+
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </div>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          isHomePageVisible ? (
+            <HomePage />
+          ) : (
+            <Navigate to="/starredimages" replace />
+          )
+        }
+      />
+      <Route path="/starredimages" element={<StarredImagesPage />} />
+    </Routes>
   );
-}
+};
 
 export default App;
