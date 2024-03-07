@@ -28,7 +28,7 @@ function HomePage() {
   const fetchRandomBackgroundImage = async () => {
     try {
       const response = await fetch(
-        "https://api.unsplash.com/photos/random?query=nature&client_id=msD46h5zm57xXHNl05BkL3kRHiwMLPYKNxV7ru3i1Bo"
+        `https://api.unsplash.com/photos/random?query=nature&client_id=${process.env.REACT_APP_ACCESS_KEY}`
       );
       const data = await response.json();
       setBackgroundImage(data.urls.regular);

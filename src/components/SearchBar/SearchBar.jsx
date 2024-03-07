@@ -14,7 +14,7 @@ const SearchBar = () => {
   const handleSearch = useCallback(() => {
     if (!searchValue) return;
     fetchData(
-      `search/photos?page=1&query=${searchValue}&per_page=20&client_id=msD46h5zm57xXHNl05BkL3kRHiwMLPYKNxV7ru3i1Bo`
+      `search/photos?page=1&query=${searchValue}&per_page=20&client_id=${process.env.REACT_APP_ACCESS_KEY}`
     );
 
     setSearchValue("");
