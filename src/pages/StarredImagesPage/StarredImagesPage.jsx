@@ -41,7 +41,6 @@ export default function StarredImagesPage() {
               <img
                 className="w-full h-auto shadow-md"
                 src={imageUrl}
-                alt={`Starred Image ${index}`}
               />
             </div>
           ))}
